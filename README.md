@@ -1,7 +1,6 @@
 ![Build status](https://travis-ci.org/tbsalling/aismessages.svg?branch=master)
 
-Introduction
----
+# Introduction
 This project exposes a web-service to decode AIS messages. If you are new to AIS you can read a short introduction to it on [my blog](https://tbsalling.dk/2018/09/01/an-introduction-to-ais/). 
 
 The actual decoding is based on the [AISmessages](https://github.com/tbsalling/aismessages) library.
@@ -50,8 +49,26 @@ into easily interpretable JSON representation like this:
 ] 
 ```
 
-Example
----
+# Building and running
+
+## Production mode
+To build and run the service from scratch in production mode:
+
+```bash
+$ git clone https://github.com/tbsalling/aismessages-rest-quarkus.git
+...
+$ cd aismessages-rest-quarkus/
+$ ./mvnw package quarkus:build
+...
+$ java -jar target/aismessages-rest-awslambda-quarkus-1.0.0-SNAPSHOT-runner.jar 
+  2019-11-07 15:02:24,201 INFO  [io.quarkus] (main) aismessages-rest-awslambda-quarkus 1.0.0-SNAPSHOT (running on Quarkus 1.0.0.CR1) started in 0.646s. 
+  2019-11-07 15:02:24,207 INFO  [io.quarkus] (main) Profile prod activated. 
+  2019-11-07 15:02:24,207 INFO  [io.quarkus] (main) Installed features: [amazon-lambda, cdi, resteasy, resteasy-jackson, smallrye-openapi, spring-di, spring-web]
+```
+
+Note the sub-second startup time (0.646s in the example)! 
+
+## Development mode
 To build and run the service from scratch in development mode:
 
 ```bash
@@ -78,11 +95,9 @@ To get a compactly formatted JSON-representation of the AIS data like this:
  
 You also even post multiple lines.
 
-Technology
----
+# Technology
 The service is built using Java using the [Quarkus](https://quarkus.io/) stack. It therefore has fast startup-time and low memory requirements. This makes it very suitable for cloud deployment; e.g. in a Kubernetes cluster or as a lambda function.
 
-Cloud deployment
----
+# Cloud deployment
 TBD
 
