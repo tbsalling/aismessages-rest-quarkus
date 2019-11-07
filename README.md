@@ -81,7 +81,11 @@ $ $ ./mvnw package quarkus:dev
 ...
 ```
 
-Now you can decode NMEA-armoured AIS messages like this:
+# OpenAPI
+To get the built-in OpenAPI specification of the service visit http://localhost:8080/openapi.
+
+# Calling the service
+With the service started - in production or development mode - you can decode NMEA-armoured AIS messages like this:
 
 ```bash
 $ curl -d $'!AIVDM,1,1,,A,18UG;P0012G?Uq4EdHa=c;7@051@,0*53\n' -H "Content-Type: text/plain" -H "Accept: application/json" -X POST http://localhost:8080/decode
@@ -93,7 +97,7 @@ To get a compactly formatted JSON-representation of the AIS data like this:
 [{"nmeaMessages":[{"rawMessage":"!AIVDM,1,1,,A,18UG;P0012G?Uq4EdHa=c;7@051@,0*53","valid":true,"sequenceNumber":null,"radioChannelCode":"A","checksum":83,"numberOfFragments":1,"fragmentNumber":1,"messageType":"AIVDM","encodedPayload":"18UG;P0012G?Uq4EdHa=c;7@051@","fillBits":0}],"metadata":{"source":"SRC1","received":1573130490.503415000,"decoderVersion":"3.0.0","category":"AIS"},"repeatIndicator":0,"sourceMmsi":{"mmsi":576048000},"navigationStatus":"UnderwayUsingEngine","rateOfTurn":0,"speedOverGround":6.6,"positionAccuracy":false,"latitude":37.912167,"longitude":-122.42299,"courseOverGround":350.0,"trueHeading":355,"second":40,"specialManeuverIndicator":"NotAvailable","raimFlag":false,"communicationState":{"syncState":"UTCDirect","slotTimeout":1,"numberOfReceivedStations":null,"slotNumber":null,"utcHour":8,"utcMinute":20,"slotOffset":null},"messageType":"PositionReportClassAScheduled","transponderClass":"A","rawSpeedOverGround":66,"rawLatitude":22747300,"rawLongitude":-73453790,"rawCourseOverGround":3500,"valid":true}] 
 ```
  
-You also even post multiple lines.
+You also post multiple lines.
 
 # Technology
 The service is built using Java using the [Quarkus](https://quarkus.io/) stack. It therefore has fast startup-time and low memory requirements. This makes it very suitable for cloud deployment; e.g. in a Kubernetes cluster or as a lambda function.
