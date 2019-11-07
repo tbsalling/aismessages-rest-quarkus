@@ -61,9 +61,9 @@ $ cd aismessages-rest-quarkus/
 $ ./mvnw package quarkus:build
 ...
 $ java -jar target/aismessages-rest-awslambda-quarkus-1.0.0-SNAPSHOT-runner.jar 
-  2019-11-07 15:02:24,201 INFO  [io.quarkus] (main) aismessages-rest-awslambda-quarkus 1.0.0-SNAPSHOT (running on Quarkus 1.0.0.CR1) started in 0.646s. 
-  2019-11-07 15:02:24,207 INFO  [io.quarkus] (main) Profile prod activated. 
-  2019-11-07 15:02:24,207 INFO  [io.quarkus] (main) Installed features: [amazon-lambda, cdi, resteasy, resteasy-jackson, smallrye-openapi, spring-di, spring-web]
+2019-11-07 21:22:53,764 INFO  [io.quarkus] (main) aismessages-rest-awslambda-quarkus 1.0.0-SNAPSHOT (running on Quarkus 1.0.0.CR1) started in 0.647s. Listening on: http://0.0.0.0:8080
+2019-11-07 21:22:53,771 INFO  [io.quarkus] (main) Profile prod activated. 
+2019-11-07 21:22:53,771 INFO  [io.quarkus] (main) Installed features: [cdi, resteasy, resteasy-jackson, smallrye-openapi, spring-di, spring-web]
 ```
 
 Note the sub-second startup time (0.646s in the example)! 
