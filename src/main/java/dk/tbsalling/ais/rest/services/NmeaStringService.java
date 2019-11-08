@@ -3,12 +3,12 @@ package dk.tbsalling.ais.rest.services;
 import dk.tbsalling.aismessages.ais.messages.AISMessage;
 import dk.tbsalling.aismessages.nmea.NMEAMessageHandler;
 import dk.tbsalling.aismessages.nmea.messages.NMEAMessage;
-import org.springframework.stereotype.Service;
 
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@RequestScoped
 public class NmeaStringService {
 
     public List<AISMessage> decode(List<String> nmeaMessagesAsStrings) {
