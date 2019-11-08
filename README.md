@@ -52,7 +52,9 @@ into easily interpretable JSON representation like this:
 # Building and running
 
 ## Production mode
-To build and run the service from scratch in production mode:
+
+### Running on a JVM
+To build and run the service from scratch in production mode using a JVM:
 
 ```bash
 $ git clone https://github.com/tbsalling/aismessages-rest-quarkus.git
@@ -67,6 +69,9 @@ $ java -jar target/aismessages-rest-awslambda-quarkus-1.0.0-SNAPSHOT-runner.jar
 ```
 
 Note the sub-second startup time (0.646s in the example)! 
+
+### Running natively in a Docker container
+It is not yet possible to work with Java 9 on Graalvm
 
 ## Development mode
 To build and run the service from scratch in development mode:
