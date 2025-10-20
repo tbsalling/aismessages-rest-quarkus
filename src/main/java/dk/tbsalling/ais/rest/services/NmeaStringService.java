@@ -16,7 +16,7 @@ public class NmeaStringService {
 
         NMEAMessageHandler nmeaMessageHandler = new NMEAMessageHandler("SRC1", aisMessage -> aisMessages.add(aisMessage));
 
-        nmeaMessagesAsStrings.stream().map(s -> NMEAMessage.fromString(s)).forEach(nmea -> nmeaMessageHandler.accept(nmea));
+        nmeaMessagesAsStrings.stream().map(s -> new NMEAMessage(s)).forEach(nmea -> nmeaMessageHandler.accept(nmea));
 
         return aisMessages;
     }

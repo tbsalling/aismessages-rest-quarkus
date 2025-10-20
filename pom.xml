@@ -11,8 +11,8 @@
     <surefire-plugin.version>2.22.0</surefire-plugin.version>
     <quarkus.version>1.0.0.CR1</quarkus.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>9</maven.compiler.source>
-    <maven.compiler.target>9</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
   </properties>
   <dependencyManagement>
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>dk.tbsalling</groupId>
       <artifactId>aismessages</artifactId>
-      <version>3.0.2</version>
+      <version>4.1.0</version>
     </dependency>
   </dependencies>
   <build>
