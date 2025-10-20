@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
 import java.util.List;
 
 @RestController
@@ -23,8 +20,6 @@ public class AisMessagesController {
     }
 
     @PostMapping("/decode")
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.APPLICATION_JSON)
     public List<AISMessage> decode(@RequestBody String body) {
         return nmeaStringService.decode(List.of(body.split(LINE_SEPARATOR)));
     }
