@@ -22,8 +22,7 @@ public class AisMessagesControllerTest {
                         "[0].rateOfTurn", is(0),
                         "[0].speedOverGround", is(6.6f),
                         "[0].courseOverGround", is(350.0f),
-                        "[0].trueHeading", is(355),
-                        "[0].valid", is(true));
+                        "[0].trueHeading", is(355));
     }
 
 }

@@ -1,8 +1,8 @@
 package dk.tbsalling.ais.rest.controllers;
 
-import io.quarkus.test.junit.NativeImageTest;
+import io.quarkus.test.junit.QuarkusIntegrationTest;
 
-@NativeImageTest
+@QuarkusIntegrationTest
 public class NativeAisMessagesControllerIT extends AisMessagesControllerTest {
 
     // Execute the same tests but in native mode.
